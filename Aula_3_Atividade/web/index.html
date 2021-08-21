@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Atividade Aula 3</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Atividade Aula 3</h1>
+        
+        <h2>Objetivo: </h2>
+        <p>Desenvolver um projeto de aplicação JavaEE com uma página inicial em HTML apresentando 2 links
+        para respostas dinâmicas dos seguintes servlets: </p>
+        
+        <ol>
+            <li>[SeuNome]Servlet, que responda uma página com seu número de matrícula(RA), seu nome 
+            completo e o link de seu perfil do GitHub</li>
+            <li>MathServlet, que responda uma página com o resultado de uma operação aritmética
+            (soma, subtração, multiplicação e divisão) a partir de 2 parâmetros</li>
+        </ol>
+        
+        <hr>
+        
+        <h2>Exercício 1</h2>
+        
+        
+        <form action="fernanda-cruz-servlet.html">
+            <p>Como link:<p>
+            <h3><a href = "fernanda-cruz-servlet.html">FernandaCruzServlet</a></h3>
+            <p>Como botão, que leva para o link:<p>
+            <input type="submit" value="FernandaCruzServlet">
+        </form>    
+        
+        <hr>
+        
+        <h2>Exercício 2</h2>
+        
+        <h3>Operações básicas</h3>
+        
+        <form action ="math-servlet.html">
+            
+            <input type="number" name="n1">
+            
+            <select name="op" id="op">                      
+              <option value="1">+</option>
+              <option value="2">x</option>
+              <option value="3">:</option>
+              <option value="4">-</option>
+            </select>
+            
+            
+            <input type="number" name="n2">
+            <input type="submit" value="Calcular">
+            
+            
+        </form>    
+    </body>
+</html>
