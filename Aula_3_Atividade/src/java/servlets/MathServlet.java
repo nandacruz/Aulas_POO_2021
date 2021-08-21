@@ -41,7 +41,7 @@ public class MathServlet extends HttpServlet {
             out.println("<title>Servlet MathServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h2>Operações básicas</h2>");
+            out.println("<h2>Operações aritméticas</h2>");
             out.println("</body>");
             out.println("</html>");
             
