@@ -44,11 +44,13 @@ public class MultiplicationTableServlet extends HttpServlet {
             out.println("<h1>Java EE</h1>");
             out.println("<h2>Servlets</h2>");
             out.println("<h2>Links rápidos: </h2>");            
-            for(int i = 1; i <= 20;i++){
-                 out.println("<a href='?n>"+i+"'>"+i+"</a> |");
-            }
+            
             out.println("<h3>Tabuada</h3>");
             int n = 2;
+            
+            for(int i = 1; i <= 10;i++){
+                 out.println("<a href='?n>"+i+"'>"+i+"</a> |");
+            }
             
             try{
                 //Todo parâmetro é string
