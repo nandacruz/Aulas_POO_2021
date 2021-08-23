@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>4.1 - Portal de cálculo de juros</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <h3>Nome: Fernanda de Moura Cruz</h3>
+        <h3>Matrícula: 1290482012008</h3>
+        
+        <hr>
+        
+        <h1>4.1 - Portal de cálculo de juros</h1>
+        
+        <p>Crie um projeto de aplicação web em Java utilizando o NetBeans com os seguintes requisitos:<p>
+            
+        <ol>
+            <li>Uma página inicial chamada index.html com seu nome e número de matrícula, além de dois formulários 
+            distintos com entradas para valor presente, juros (em %) e tempo (em meses) e que façam as requisições
+            “/juros-simples.html” e “/juros-composto.html”</li>
+            
+            <li>Um servlet chamado JurosSimplesServlet que responda a url “/juros-simples.html” que mostre os dados
+            enviados pelo formulário e o resultado final (valor futuro)</li>
+            
+            <li>Um servlet chamado JurosCompostoServlet que responda a url “/juros-composto.html” que mostre os dados
+            enviados pelo formulário e o resultado final (valor futuro)</li>
+        </ol>
+        
+        <hr>
+        
+        <form action ="juros-simples.html">
+        
+            <h2>Juros Simples</h2>
+            
+            <input type="number" name="vp" placeholder=" Digite o valor presente">            
+            <input type="number" name="n" placeholder=" Digite o período(meses)">
+            <input type="number" name="j" step="0.1" placeholder=" Digite a taxa de juros">
+            <input type="submit" value="Calcular">
+        
+        </form>
+        
+        <hr>
+        
+        <form action ="juros-composto.html">
+        
+            <h2>Juros Composto</h2>
+            
+            <input type="number" name="vp" placeholder=" Digite o valor presente">            
+            <input type="number" name="n" placeholder=" Digite o período(meses)">
+            <input type="number" name="j" step="0.1" placeholder=" Digite a taxa de juros">
+            <input type="submit" value="Calcular">
+        
+        </form>
+        
+        <hr>
+        
+    </body>
+</html>
