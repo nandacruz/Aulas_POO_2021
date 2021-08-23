@@ -11,10 +11,14 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="assets/css/style.css"/>
     </head>
-    <body>
-        
-        <h3>Nome: Fernanda de Moura Cruz</h3>
-        <h3>Matrícula: 1290482012008</h3>
+    
+    <header>
+         <h3>Nome: Fernanda de Moura Cruz</h3>
+         <h3>Matrícula: 1290482012008</h3>
+    </header>
+    
+    <body>    
+       
         
         <hr>
         
@@ -36,29 +40,35 @@ and open the template in the editor.
         
         <hr>
         
-        <form action ="juros-simples.html">
         
-            <h2>Juros Simples</h2>
             
-            <input type="number" name="vp" placeholder=" Digite o valor presente">            
-            <input type="number" name="n" placeholder=" Digite o período(meses)">
-            <input type="number" name="j" step="0.1" placeholder=" Digite a taxa de juros">
-            <input type="submit" value="Calcular">
-        
-        </form>
-        
-        <hr>
-        
-        <form action ="juros-composto.html">
-        
-            <h2>Juros Composto</h2>
             
-            <input type="number" name="vp" placeholder=" Digite o valor presente">            
-            <input type="number" name="n" placeholder=" Digite o período(meses)">
-            <input type="number" name="j" step="0.1" placeholder=" Digite a taxa de juros">
-            <input type="submit" value="Calcular">
         
-        </form>
+            <form action ="juros-simples.html">
+
+                <h2>Juros Simples</h2>
+
+                <input type="number" name="vp" placeholder=" Digite o valor presente"/>            
+                <input type="number" name="n" placeholder=" Digite o período(meses)"/>
+                <input type="number" name="j" step="0.1" placeholder=" Digite a taxa de juros"/>
+                <input type="submit" value="Calcular" id="button"/>
+
+            </form>
+
+            <hr>
+
+            <form action ="juros-composto.html">
+
+                <h2>Juros Composto</h2>
+
+                <input type="number" name="vp" placeholder=" Digite o valor presente"/>            
+                <input type="number" name="n" placeholder=" Digite o período(meses)"/>
+                <input type="number" name="j" step="0.1" placeholder=" Digite a taxa de juros"/>
+                <input type="submit" value="Calcular" id="button"/>
+
+            </form>
+        
+        
         
         <hr>
         
