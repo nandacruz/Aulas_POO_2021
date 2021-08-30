@@ -49,20 +49,19 @@
             <%for (int i = 1; i<=n;i++){%>
             
             <tr>
-                <th>Índice </th>
-                <th>Número</th>
+                <th><%= i %></th>
+                <th><%=((int)(100*Math.random())) %></th>
             </tr> 
             
+            <%}%>
         </table>
         
-        
+        <%}else{%>       
         
             <div style="color:red"><%= errorMessage %></div>
         
-        <% 
-            }
-        %>
-        
+       
+        <%}%>
         <form>
             
             <input type="number" value="5" name="n"/>             
