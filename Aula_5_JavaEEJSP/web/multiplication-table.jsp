@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <% 
     String errorMessage = null;
-    int n = 0;
+    int n = 10;
     
     try{
         n = Integer.parseInt(request.getParameter("n"));        
@@ -32,24 +32,23 @@
         <h2>Java Server Pages</h2>
         <h3><a href="index.html">Voltar</a></h3>
         
-        <h3>Números aleatórios</h3>
+        <h3>Tabuada</h3>
         
         <% 
             if(errorMessage == null){
         %>
             
-        <table border="1">
+        <table>
+            
+                      
+            <%for (int i = 1; i<=10;i++){%>
             
             <tr>
-                <th>Índice </th>
-                <th>Número</th>
-            </tr> 
-            
-            <%for (int i = 1; i<=n;i++){%>
-            
-            <tr>
-                <th><%= i %></th>
-                <th><%=((int)(100*Math.random())) %></th>
+                <td><%= n %></td>
+                <td> x </td>
+                <td><%= i %></td>
+                <td>=</td>
+                <th><%=(n*i) %></th>
             </tr> 
             
             <%}%>

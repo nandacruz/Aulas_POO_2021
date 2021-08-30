@@ -44,7 +44,6 @@
     <body>
         <h1>Java EE</h1>
         <h2>Java Server Pages</h2>
-        <h3>Data/hora do servidor</h3>
         <h3><a href="index.html">Voltar</a></h3>
         
         <h3>Soma</h3>
