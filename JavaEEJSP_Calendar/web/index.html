@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Home Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="assets/css/style.css"/>
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        
+    </head>
+    <body>
+        <header>
+            <h1 class="title">Calendário</h1>               
+        </header>
+        
+        <article>
+            <div class="flex-container">
+                <section class="instruction">
+
+                    <p>Criar um projeto com uma página JSP que a partir do ano e o mês informados como parâmetro mostre uma tabela com o calendário do mês como no anexo.
+                        Anexar: link do projeto no GitHub e capturas de tela de:
+                    </p>
+
+                    <ul>
+                        
+                        <li> Projeto aberto no NetBeans na página inicial</li>
+                        <li> Página do calendário executada no navegador </li>
+                    </ul>
+
+                </section>
+
+                <form action="calendar.jsp">
+                    <img src="assets/img/unnamed.png" class="form-img"/>
+                    
+                    <div>
+                        <input type="number" placeholder="mm" class="fields" min="1" max="12" name="m"/>
+                        <input type="number" placeholder="yyyy" class="fields" min="1" name="y"/>
+                    </div>
+                    
+                    <input type="submit" value="Consultar" id="btn-calendar"/>
+
+                </form>
+            </div>
+        </article>
+        
+        
+        <footer>
+            <p><b>Nome:</b> Fernanda de Moura Cruz</p>
+            <p><b>RA:</b> 0000000000</p>
+        </footer>
+    </body>
+</html>
