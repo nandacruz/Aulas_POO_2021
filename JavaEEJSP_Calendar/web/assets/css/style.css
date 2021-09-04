@@ -67,19 +67,20 @@ form{
     border-radius: 5px 5px 5px 5px;
     box-shadow: 5px 5px 5px #151515;
     background-color: #252525;
-    height: 50vh;
+    
     
 }
 
 #btn-calendar{
     background-color: #B980F0;
-   font-weight: bold;
-    font-size: 18px;
+    font-weight: bold;
+    font-size: 15px;
     padding: 10px;
     border: none;
     color: #ffff;
     border-radius: 5px 5px 5px 5px;
     box-shadow: 5px 5px 5px #151515;
+    
 }
 
 .form-img{
@@ -97,13 +98,19 @@ form input{
     color:#00000;
 }
 
-table{
-    margin:10px;
-    color: white;
+.calendar{
+    
+    box-shadow: 5px 5px 5px #151515;
     min-width: 30vw;
     min-height: 40vh;
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px #151515;
+    
+    
+}
+
+table{
+    color: white;
+    margin:10px;
+    border-radius: 5px;   
 }
 
 table tr{
@@ -117,4 +124,13 @@ table tr{
 
 .month{
     background-color: #202040;
+}
+
+.information{
+    text-align: left;    
+    background-color: white;
+}
+
+.information th{
+    padding: 10px;
 }

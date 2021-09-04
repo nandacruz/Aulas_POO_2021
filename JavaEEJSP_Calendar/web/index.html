@@ -42,11 +42,25 @@ and open the template in the editor.
                     <img src="assets/img/unnamed.png" class="form-img"/>
                     
                     <div>
-                        <input type="number" placeholder="mm" class="fields" min="1" max="12" name="m"/>
+                        <select name="m" id="m">                      
+                            <option value="1">Janeiro</option>
+                            <option value="2">Fevereiro</option>
+                            <option value="3">Março</option>
+                            <option value="4">Abril</option>
+                            <option value="5">Maio</option>
+                            <option value="6">Junho</option>
+                            <option value="7">Julho</option>
+                            <option value="8">Agosto</option>
+                            <option value="9">Setembro</option>
+                            <option value="10">Outubro</option>
+                            <option value="11">Novembro</option>
+                            <option value="12">Dezembro</option>
+                        </select>
                         <input type="number" placeholder="yyyy" class="fields" min="1" name="y"/>
+                        <input type="submit" value="consultar" id="btn-calendar"/>
                     </div>
                     
-                    <input type="submit" value="Consultar" id="btn-calendar"/>
+                   
 
                 </form>
             </div>

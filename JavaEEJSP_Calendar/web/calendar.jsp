@@ -4,9 +4,14 @@
     Author     : FERNANDADEMOURACRUZ
 --%>
 
+
+
+<%@page import="java.util.Calendar"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <% 
+    
+       
     String errorMessage = null;
     int m = 0;
     String mes="";
@@ -70,6 +75,22 @@
             
 %>
 
+
+<%
+    Calendar c = Calendar.getInstance();
+    c.set(Calendar.YEAR, y);
+    c.set(Calendar.MONTH, m-1);
+    c.set(Calendar.DAY_OF_MONTH,1);
+    c.get(Calendar.DAY_OF_WEEK);
+    
+    Integer date = (c.get(Calendar.DAY_OF_WEEK));
+    //String date = (""+c.getTime());
+    Integer year =(c.get(Calendar.YEAR));
+    Integer month =(c.get(Calendar.MONTH));
+    Integer week =(c.get(Calendar.DAY_OF_MONTH));
+    
+%>
+
 <html>
     <head>
         <title>Calendar</title>
@@ -98,20 +119,73 @@
                      
                                         
                     
+                    <!--30 dias-->
+                    <% if(m == 4 || m == 5 || m == 9 || m == 11 ){ 
                     
-                    <% for(int i = 1;i<=6;i++){%> <!--quantidade maxima de semanas em um mes-->
+                    int cont = 1;
+                    %>
+                    
+                       <%for(int i = 1;i<=6;i++){%> <!--quantidade maxima de semanas em um mes-->
 
-                        <tr>                              
+                        <tr>            
+                            <% if(cont == 1){%> <!--primeira semana ( para cair  no dia certo)-->
+                                <% for(int j = 1;j<=7;j++){%> <!--dias numericos-->
 
-                            <% for(int j = 1;j<=7;j++){%> <!--dias numericos-->
+                                    <%if(j >= date){%>
 
-                                <th><%= j %></th>
+                                        <%if(cont < 31){%>
 
+                                            <th><%= cont++ %></th>
+
+                                        <%}%>
+
+                                    <%}else{%>
+
+                                        <th></th>
+
+                                    <%}%>
+
+                                <%}%>
+
+                            <%}else{%><!--Semanas posteriores-->
+                                <% for(int j = 1;j<=7;j++){%> <!--dias numericos-->
+
+                                    <%if(cont < 31){%>
+
+                                        <th><%= cont++ %></th>
+
+                                    <%}%>                             
+                                    
+                                    
+
+                                <%}%>
+                            
+                            
+                            
                             <%}%>
 
                         </tr>    
 
-                    <%}%>                    
+                    <%}%>
+                
+                <!---31 dias-->    
+                <%}else{  int cont = 1; %>
+                    
+                   
+               
+                <%}%>    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                            
                 
                 </table>    
 
@@ -119,12 +193,34 @@
                     <img src="assets/img/unnamed.png" class="form-img"/>
                     
                     <div>
-                        <input type="number" placeholder="mm" class="fields" min="1" max="12" name="m" value="<%=m%>"/>
-                        <input type="number" placeholder="yyyy" class="fields" min="1" name="y" value="<%=y%>"/>
+                        <select name="m" id="m">                      
+                            <option value="1">Janeiro</option>
+                            <option value="2">Fevereiro</option>
+                            <option value="3">Março</option>
+                            <option value="4">Abril</option>
+                            <option value="5">Maio</option>
+                            <option value="6">Junho</option>
+                            <option value="7">Julho</option>
+                            <option value="8">Agosto</option>
+                            <option value="9">Setembro</option>
+                            <option value="10">Outubro</option>
+                            <option value="11">Novembro</option>
+                            <option value="12">Dezembro</option>
+                        </select>
+                        <input type="number" placeholder="yyyy" class="fields" min="1" value="<%= year %>" name="y"/>
+                        <input type="submit" value="consultar" id="btn-calendar"/>
                     </div>
                     
-                    <input type="submit" value="Consultar" id="btn-calendar"/>
-
+                    <table class="information">
+                        <tr><th colspan="3">Dia da semana que inicia: <%= date %></th></tr>
+                        <tr><th>Dia: <%= week %></th><th>Mês: <%= month+1%></th><th>Ano: <%= year %></th></tr>
+                        
+                       
+                        
+                    </table>
+                    
+                    
+                    
                 </form>
             </div>
         </article>
