@@ -159,13 +159,124 @@
                             <%}%>
                         </tr>
                     <%}%>
-                <%}%>
+                <%}
                 
-                        
+                
+                else if(m == 2 && y%4==0 ){int cont = 1;%><!--29 dias--------------------------------------------------------------------------------------->
+                    
+                       <%for(int i = 1;i<=6;i++){%> <!--quantidade maxima de semanas em um mes-->
+
+                        <tr>            
+                            <% if(cont == 1){%> <!--primeira semana ( para cair  no dia certo)-->
+                                <% for(int j = 1;j<=7;j++){%> <!--dias numericos-->
+
+                                    <%if(j >= date){%>
+
+                                        <%if(cont < 30){%>
+
+                                            <th><%= cont++ %></th>
+
+                                        <%}%>
+
+                                    <%}else{%>
+
+                                        <th></th>
+
+                                    <%}%>
+
+                                <%}%>
+
+                            <%}else{%><!--Semanas posteriores-->
+                                <% for(int j = 1;j<=7;j++){%> <!--dias numericos-->
+
+                                    <%if(cont < 30){%>
+
+                                        <th><%= cont++ %></th>
+
+                                    <%}%>     
+                                <%}%>  
+                            <%}%>
+                        </tr>
+                    <%}%>
+                <%}        
                           
+                
+                else if(m == 2 ){ int cont = 1;%><!--28 dias--------------------------------------------------------------------------------------->
                     
+                       <%for(int i = 1;i<=6;i++){%> <!--quantidade maxima de semanas em um mes-->
+
+                        <tr>            
+                            <% if(cont == 1){%> <!--primeira semana ( para cair  no dia certo)-->
+                                <% for(int j = 1;j<=7;j++){%> <!--dias numericos-->
+
+                                    <%if(j >= date){%>
+
+                                        <%if(cont < 29){%>
+
+                                            <th><%= cont++ %></th>
+
+                                        <%}%>
+
+                                    <%}else{%>
+
+                                        <th></th>
+
+                                    <%}%>
+
+                                <%}%>
+
+                            <%}else{%><!--Semanas posteriores-->
+                                <% for(int j = 1;j<=7;j++){%> <!--dias numericos-->
+
+                                    <%if(cont < 29){%>
+
+                                        <th><%= cont++ %></th>
+
+                                    <%}%>     
+                                <%}%>  
+                            <%}%>
+                        </tr>
+                    <%}%>
+                <%}    
                     
+                
+                 else{int cont = 1;%><!--31 dias--------------------------------------------------------------------------------------->
                     
+                       <%for(int i = 1;i<=6;i++){%> <!--quantidade maxima de semanas em um mes-->
+
+                        <tr>            
+                            <% if(cont == 1){%> <!--primeira semana ( para cair  no dia certo)-->
+                                <% for(int j = 1;j<=7;j++){%> <!--dias numericos-->
+
+                                    <%if(j >= date){%>
+
+                                        <%if(cont < 32){%>
+
+                                            <th><%= cont++ %></th>
+
+                                        <%}%>
+
+                                    <%}else{%>
+
+                                        <th></th>
+
+                                    <%}%>
+
+                                <%}%>
+
+                            <%}else{%><!--Semanas posteriores-->
+                                <% for(int j = 1;j<=7;j++){%> <!--dias numericos-->
+
+                                    <%if(cont < 32){%>
+
+                                        <th><%= cont++ %></th>
+
+                                    <%}%>     
+                                <%}%>  
+                            <%}%>
+                        </tr>
+                    <%}%>
+                <%}%>    
                     
                     
                     
