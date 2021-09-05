@@ -83,8 +83,7 @@
     c.set(Calendar.DAY_OF_MONTH,1);
     c.get(Calendar.DAY_OF_WEEK);
     
-    Integer date = (c.get(Calendar.DAY_OF_WEEK));
-    //String date = (""+c.getTime());
+    Integer date = (c.get(Calendar.DAY_OF_WEEK));    
     Integer year =(c.get(Calendar.YEAR));
     Integer month =(c.get(Calendar.MONTH));
     Integer week =(c.get(Calendar.DAY_OF_MONTH));
@@ -106,7 +105,20 @@
     </head>
     <body>
         <header>
-            <h1 class="title">Calendário</h1>               
+            
+            <div>
+                <h2><a href="index.html"> < Voltar</a></h2>
+            </div>
+            
+            <div class="title">
+            <h1>Calendário</h1>
+            </div>
+            
+            <div>
+                
+            </div>
+            
+            
         </header>
         
         <article>
@@ -290,7 +302,8 @@
                     <img src="assets/img/unnamed.png" class="form-img"/>
                     
                     <div>
-                        <select name="m">                      
+                        <select name="m">
+                            <option value="0" selected disabled>Mês</option>
                             <option value="1">Janeiro</option>
                             <option value="2">Fevereiro</option>
                             <option value="3">Março</option>
@@ -309,8 +322,8 @@
                     </div>
                     
                     <table class="information">
-                        <tr><th colspan="3">Dia da semana que inicia: <%= date %></th></tr>
-                        <tr><th>Dia: <%= week %></th><th>Mês: <%= month+1%></th><th>Ano: <%= year %></th></tr>
+                        <tr><th colspan="3">Dia da semana que inicia: <%= date %>º</th></tr>
+                        <tr><th>Mês: <%= month+1%></th><th>Ano: <%= year %></th></tr>
                         
                        
                         
@@ -325,7 +338,7 @@
         
         <footer>
             <p><b>Nome:</b> Fernanda de Moura Cruz</p>
-            <p><b>RA:</b> 0000000000</p>
+            <p><b>RA:</b>1290482012008</p>
         </footer>
     </body>
 </html>

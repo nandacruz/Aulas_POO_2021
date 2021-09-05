@@ -20,10 +20,18 @@ header{
     min-height: 50px;
     padding: 10px;
     border-radius: 5px 5px 0px 0px;
-    background-color: #B980F0;
-    text-align: center;
-    color: #ffff;
+    background-color: #B980F0;    
+    color: #ffff;    
+    display: flex; 
+    justify-content: space-between;   
+   
 }
+a{
+    text-decoration: none;
+    color:#fff;
+}
+
+
 
 body{
     background-color: #252525;
