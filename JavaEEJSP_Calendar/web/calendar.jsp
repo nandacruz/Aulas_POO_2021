@@ -276,9 +276,7 @@
                             <%}%>
                         </tr>
                     <%}%>
-                <%}%>    
-                    
-                    
+                <%}%>                
                     
                     
                     
@@ -292,7 +290,7 @@
                     <img src="assets/img/unnamed.png" class="form-img"/>
                     
                     <div>
-                        <select name="m" id="m">                      
+                        <select name="m">                      
                             <option value="1">Janeiro</option>
                             <option value="2">Fevereiro</option>
                             <option value="3">Março</option>
