@@ -16,68 +16,24 @@
         session.removeAttribute("userName");
     }
      
-    
-//----------
-    
-    
-    if(session.getAttribute("num1")== null){ 
-       
-       session.setAttribute("num1", randomNumber.nextInt(100));        
-    }
-     
-    int num1 = (int) session.getAttribute("num1");
-    session.setAttribute("num1", num1);  
-    
-//----------
-    
-    
-    if(session.getAttribute("num2")== null){ 
-       session.setAttribute("num2", randomNumber.nextInt(100));        
-    }
-     
-    int num2 = (int) session.getAttribute("num2");
-    session.setAttribute("num2", num2);  
-
     String authUserName = (String)session.getAttribute("userName");
-    
 //----------
+    String conc = "";
+    
+    for(int i = 0;i<6;i++){
+        conc += randomNumber.nextInt(100)+ " ";
+    }
     
     
-    if(session.getAttribute("num3")== null){ 
-       session.setAttribute("num3", randomNumber.nextInt(100));        
+    if(session.getAttribute("numero")== null){ 
+       
+       session.setAttribute("numero", conc);        
     }
      
-    int num3 = (int) session.getAttribute("num3");
-    session.setAttribute("num3", num3);  
+    String numero = (String) session.getAttribute("numero");
+    session.setAttribute("numero", numero);  
+    
 
-//----------
-    
-    
-    if(session.getAttribute("num4")== null){ 
-       session.setAttribute("num4", randomNumber.nextInt(100));        
-    }
-     
-    int num4 = (int) session.getAttribute("num4");
-    session.setAttribute("num4", num4);  
-
-//----------
-    
-    
-    if(session.getAttribute("num5")== null){ 
-       session.setAttribute("num5", randomNumber.nextInt(100));        
-    }
-     
-    int num5 = (int) session.getAttribute("num5");
-    session.setAttribute("num5", num5);  
-//----------
-    
-    
-    if(session.getAttribute("num6")== null){ 
-       session.setAttribute("num6", randomNumber.nextInt(100));        
-    }
-     
-    int num6 = (int) session.getAttribute("num6");
-    session.setAttribute("num6", num6);  
 %>    
 
 
@@ -98,12 +54,12 @@
         <form>
             <%if(authUserName==null) {%>
                     Usuário: <input type="text" name="userName"/>
-                    Senha: <input type="text" name="userPassword"/>
+                    Senha: <input type="password" name="userPassword"/>
                     <input type="submit" name="login" value="LogIn"/>
             <%}else{%>
                     <div>Seja bem vindo, <%= authUserName %></div>
                     
-                    <div>Numero gerado: <%= num1 %> - <%= num2 %> - <%= num3 %> - <%= num4 %> - <%= num5 %> - <%= num6 %></div>
+                    <div>Numero gerado: <%= numero %></div>
                     <input type="submit" name="logout" value="Logout"/>   
             <%}%>
         </form>
