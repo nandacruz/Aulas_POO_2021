@@ -1,0 +1,7 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+
+<h1>Fernanda App</h1>
+
+<div><a href="index.jsp">Home</a> | <a href="about.jsp">About</a></div>
+
