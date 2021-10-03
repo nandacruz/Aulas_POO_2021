@@ -8,6 +8,15 @@
 <%
     Random randomNumber =  new Random();
     
+    /*int vetor[] = new int[5];
+    
+    
+    for( int i = 0;i<6;i++){
+        
+        vetor[i] = randomNumber.nextInt(100);
+        
+    }*/
+    
      if(request.getParameter("login") != null){
         String userName = request.getParameter("userName");
         session.setAttribute("userName", userName); 

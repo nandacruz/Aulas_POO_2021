@@ -1,0 +1,109 @@
+<%-- any content can be specified here e.g.: --%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.Random"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page pageEncoding="UTF-8" %>
+
+<%
+    
+    
+   List<String> Lista = new ArrayList<>();
+   Random randomNumber =  new Random();
+   String numeros = "";
+   
+    //Processamento de requisições de login-------------------------------------------------------------------------
+    
+    
+    if(application.getAttribute("contador")== null){
+       application.setAttribute("contador",0);
+    }
+    
+    int contador = (int) application.getAttribute("contador");
+    
+   
+    
+    //formulário de login-------------------------------------------------------------------------------------------
+    
+    
+    
+    if(request.getParameter("login") != null){//verficando se o login não está nulo
+           
+        String userName = request.getParameter("userName");//recuperando dados do formulario do usuario
+            
+        session.setAttribute("userName", userName);//aqui está sendo atribuido na sessão o atributo digitado pelo usuário a String UserName
+            
+        //Somando sessões (login) -----------------------------------------------------------------------------
+        contador += 1;
+        application.setAttribute("contador",contador);
+            
+            
+        //vetor randomico---------------------------------------------------------------------------------------
+        int vetor[] = new int[6];
+        
+            for(int i = 0; i<6;i++){
+            
+                vetor[i] = randomNumber.nextInt(60)+1;
+             
+            }
+            
+            
+        for(int j = 0; j<6;j++){
+            numeros +=vetor[j]+" ";
+        }
+            
+            
+        session.setAttribute("numeros", numeros);
+            
+        //-----------------------------------------------------------------------------------------------------
+            
+            
+        response.sendRedirect(request.getRequestURI());
+         
+        }else if(request.getParameter("logout") != null){
+           
+            session.removeAttribute("userName");
+            session.removeAttribute("numeros");
+            
+             //Subtraindo sessões (logoff) -----------------------------------------------------------------------------
+            contador -= 1;
+            application.setAttribute("contador",contador);
+            
+            //Processamento de Lista de Usuarios inativos-----------------------------------------------------------
+            
+            
+            response.sendRedirect(request.getRequestURI());
+        }
+  
+    // pegando o nome de usuario que está na sessão
+    String UserName = (String)session.getAttribute("userName");
+    String Megasena = (String)session.getAttribute("numeros"); 
+   
+   
+    
+%>
+
+<%--1--%>
+<h1>Fernanda</h1>
+
+<%--se o login for nulo--%>
+<%if(UserName==null){%>
+    <form method="post">
+        <input type="text" name="userName" placeholder="nome de usuário" required/>
+        <input type="submit" name="login" value="Login"/>
+    </form>
+    
+<%--se o login não for nulo--%>
+<%}else{%>
+    <div>Seja bem vindo, <%= UserName %></div>
+    
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.jsp">Index</a></li>
+            <li><a href="fernanda.jsp">fernanda</a></li>
+            <li><a href="fernanda-dica-megasena.jsp">fernanda-dica-megasena</a></li>
+        <ul>
+    </nav>
+    <form><input type="submit" name="logout" value="Logout"/></form>    
+<%}%>
+<hr>
