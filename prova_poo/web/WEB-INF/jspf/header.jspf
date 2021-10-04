@@ -1,0 +1,93 @@
+<%-- any content can be specified here e.g.: --%>
+<%@page import="java.util.Random"%>
+<%@page import="java.util.ArrayList"%>
+<%
+     ArrayList<String> Lista = new ArrayList();
+    //int contador = 0;
+    Random randomNumber = new Random();
+    String numeros = "";
+    // contador
+    if(application.getAttribute("contador") == null){
+        application.setAttribute("contador", 0);
+        
+    }
+       int contador = (int)application.getAttribute("contador");
+    
+    
+    /*
+        if(application.getAttribute("usuario")== null){
+            application.setAttribute("usuario", " ");
+            String userslog = (String)application.getAttribute("usuario");
+            Lista.add(userslog);
+        }else{
+
+        }
+    */   
+       
+    if(request.getParameter("login") != null){
+        // lendo o parametro enviado pelo form
+        String userName = request.getParameter("username");
+        // guardando o parametro digitado
+        session.setAttribute("username", userName);
+        
+        
+        //Somando usuarios logados
+        contador += 1;
+        application.setAttribute("contador", contador);
+        
+        //vetor de numeros randomicos
+        int vetor[] = new int[6];
+        
+        for(int i = 0; i<6; i++){
+            vetor[i] = randomNumber.nextInt(60)+ 1;
+        }
+        
+        
+        for(int i = 0; i<6;i++){
+                
+            numeros += vetor[i] + " ";
+        }
+        session.setAttribute("numeros", numeros);
+        
+        //sessão fixa ate logoff
+        response.sendRedirect(request.getRequestURI()); 
+    
+    }else if(request.getParameter("logoff") != null){
+        session.removeAttribute("username");
+        
+        //Subtraindo usuarios
+        contador -= 1;
+        application.setAttribute("contador", contador);
+         //sessão fixa ate logoff
+        response.sendRedirect(request.getRequestURI()); 
+    }
+    
+    
+    
+    //usuario da sessã0
+    String user = (String)session.getAttribute("username");
+    String Megasena = (String)session.getAttribute("numeros");
+    
+%>
+
+
+<%@ page pageEncoding="UTF-8" %>
+<h2>Fernanda de Moura Cruz</h2>
+
+<%if(user == null){%>
+    <form method="post">
+        <input type ="text" name="username" placeholder="Digite seu usuário"/>
+        <input type ="submit" name="login" value="login"/>
+    </form>
+<%}else{%>
+    <h2>Bem vindo(a),<%= user %></h2>
+    
+    <ul>
+        <li><a href="index.jsp">Index</a></li>
+        <li><a href="fernanda.jsp">fernanda</a></li>
+        <li><a href="fernanda-dica-megasena.jsp">fernanda-dica-megasena</a></li>
+    </ul>
+    <form method="post">
+        <input type ="submit" name="logoff" value="logoff"/>
+    </form>
+<%}%>
