@@ -1,0 +1,65 @@
+<%-- any content can be specified here e.g.: --%>
+<%@page import="java.util.ArrayList"%>
+<%@ page pageEncoding="UTF-8" %>
+
+<%
+    if(request.getParameter("login") != null){
+        // lendo o parametro enviado pelo form
+        String userName = request.getParameter("username");
+        // guardando o parametro digitado
+        session.setAttribute("username", userName);
+        
+        
+        /*Acumulador de nomes nas sessoes
+        if(request.getParameter("sessionList") != null){
+            ArrayList<String> headerSessionList = new ArrayList<>();
+            headerSessionList.add(userName);
+            application.setAttribute("sessionList",headerSessionList);
+        }else{
+            ArrayList<String> headerSessionList = (ArrayList)application.getAttribute("sessionList");
+            headerSessionList.add(userName);
+            application.setAttribute("sessionList", headerSessionList);
+        }
+        */
+    }
+    
+    else if(request.getParameter("logoff") == null){
+        
+        /*
+        if(request.getParameter("sessionList") != null){
+            //remove os nomes das sessoes
+            ArrayList<String> headerSessionList = (ArrayList)application.getAttribute("sessionAttribute");
+            headerSessionList.remove(session.getAttribute("username"));
+            application.setAttribute("sessionList",headerSessionList);
+        }
+        */
+        
+        
+        session.removeAttribute("username");
+        response.sendRedirect(request.getRequestURI()); 
+    }
+    //usuario da sessão
+    String user = (String)session.getAttribute("username");
+    
+%>
+
+<h1>Fernanda APP</h1>
+
+<%if(user == null){%>
+    <form method="post">
+        <input type ="text" name="username" placeholder="Digite seu usuário"/>
+        <input type ="submit" name="login" value="login"/>
+    </form>
+<%}else{%>
+    <h2>Bem vindo(a),<%= user %></h2>
+    
+    <ul>
+        <li><a href="index.jsp">Home</a></li>
+        <li><a href="fernanda.jsp">fernanda</a></li>
+        <li><a href="fernanda-dica-megasena.jsp">fernanda-dica-megasena</a></li>
+    </ul>
+    <form method="post">
+        <input type ="submit" name="logoff" value="logoff"/>
+    </form>    
+<%}%>
+

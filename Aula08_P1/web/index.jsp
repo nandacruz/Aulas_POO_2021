@@ -1,6 +1,6 @@
 <%-- 
     Document   : index
-    Created on : 4 de out. de 2021, 11:17:23
+    Created on : 18 de out. de 2021, 18:07:06
     Author     : FERNANDADEMOURACRUZ
 --%>
 
@@ -13,13 +13,8 @@
     </head>
     <body>
         <%@include file="WEB-INF/jspf/header.jspf" %>
-        <h1>Usuários logados:<%= application.getAttribute("contador") %></h1>
-        <%if(user != null){%>
-        <table border="1">
-            <tr><th>Usuários Logados</th></tr>
-            
-        </table>
-        <%}%>
-        
+        <hr>
+        <h1>Home</h1>
+        <h3>Sessões:  </h3>
     </body>
 </html>

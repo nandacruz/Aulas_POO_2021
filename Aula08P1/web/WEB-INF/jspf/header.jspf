@@ -1,0 +1,67 @@
+<%-- any content can be specified here e.g.: --%>
+<%@page import="java.util.ArrayList"%>
+<%@ page pageEncoding="UTF-8" %>
+
+<%
+    if(request.getParameter("login") != null){
+        // lendo o parametro enviado pelo form
+        String userName = request.getParameter("username");
+        // guardando o parametro digitado
+        session.setAttribute("username", userName);
+        
+        //Numeros aleatorios
+        ArrayList<Integer> numbers = new ArrayList<>();
+        while(numbers.size()<6){
+            int n = ((int)(61*Math.random())+1);
+            if(!numbers.contains(n)){
+                numbers.add(n);
+            }
+        }
+        session.setAttribute("userNumbers", numbers);
+        //Adicionando nome na lista
+        if(application.getAttribute("sessionList") == null){
+        
+            ArrayList<String> headerSessionList = new ArrayList<>();
+            headerSessionList.add(userName);
+            application.setAttribute("sessionList", headerSessionList);
+        }else{
+            ArrayList<String> headerSessionList = (ArrayList) application.getAttribute("sessionList");
+            headerSessionList.add(userName);
+            application.setAttribute("sessionList", headerSessionList);
+        }
+        response.sendRedirect(request.getRequestURI());
+    }else if(request.getParameter("logoff") != null){
+        
+        //Removendo nome da lista
+        if(application.getAttribute("sessionList") != null){
+            ArrayList<String> headerSessionList = (ArrayList) application.getAttribute("sessionList");
+            headerSessionList.remove(session.getAttribute("username"));
+            application.setAttribute("sessionList", headerSessionList);
+        }
+        session.removeAttribute("username");
+        session.removeAttribute("userNumbers");
+        response.sendRedirect(request.getRequestURI());
+    }    
+    
+    String user = (String)session.getAttribute("username");
+%>
+
+<h1>Fernanda APP</h1>
+
+<%if(user == null){%>
+    <form method="post">
+        <input type ="text" name="username" placeholder="Digite seu usuário"/>
+        <input type ="submit" name="login" value="login"/>
+    </form>
+<%}else{%>
+    <h2>Bem vindo(a),<%= user %></h2>
+    
+    <ul>
+        <li><a href="index.jsp">Home</a></li>
+        <li><a href="fernanda.jsp">fernanda</a></li>
+        <li><a href="fernanda-dica-megasena.jsp">fernanda-dica-megasena</a></li>
+    </ul>
+    <form method="post">
+        <input type ="submit" name="logoff" value="logoff"/>
+    </form>    
+<%}%>
