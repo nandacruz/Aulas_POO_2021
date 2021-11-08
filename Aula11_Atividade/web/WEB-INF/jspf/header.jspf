@@ -1,0 +1,8 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<h1>Fernanda APP</h1>
+
+<hr>
+    <a href="index.jsp"> Início </a>|
+    <a href="horario.jsp"> Horário </a>|
+<hr>
