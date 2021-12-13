@@ -2,7 +2,7 @@
 <%@page import="java.util.Random"%>
 <%@page import="java.util.ArrayList"%>
 <%
-     ArrayList<String> Lista = new ArrayList();
+    ArrayList<String> Lista = new ArrayList();
     //int contador = 0;
     Random randomNumber = new Random();
     String numeros = "";
@@ -29,7 +29,6 @@
         String userName = request.getParameter("username");
         // guardando o parametro digitado
         session.setAttribute("username", userName);
-        
         
         //Somando usuarios logados
         contador += 1;
