@@ -56,9 +56,4 @@ public class FernandaDbListener implements ServletContextListener {
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
     }
-
-   
-    
-   
-    
 }

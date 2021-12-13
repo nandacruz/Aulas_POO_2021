@@ -23,6 +23,7 @@ public class Tasks {
         ArrayList<Tasks> list = new ArrayList<>();
         Connection con = FernandaDbListener.getConnection();
         Statement stmt = con.createStatement();
+        //percorrendo com resultset
         ResultSet rs = stmt.executeQuery("SELECT rowid, * FROM Fernanda_tasks");
         while(rs.next()){
             long rowid = rs.getLong("rowid");
