@@ -5,7 +5,7 @@
         String login = request.getParameter("user.login");
         String password = request.getParameter("user.password");
         try{
-            User user = User.getUser(username, password, name);
+            User user = User.getUser(username, password, name);//
             if(user == null){
                 headerError = "Usuário / senha não encontrado";
             }else{
